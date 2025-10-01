@@ -1,0 +1,20 @@
+Medida Estado de Resultados = IF(
+                        HASONEVALUE(Conceptos[Conceptos]),
+                        SWITCH(VALUES(Conceptos[Conceptos]),
+                                "Ingresos",[Medida Ingresos],
+                                "Costo de lo vendido",[Medida Costo de lo vendido],
+                                "Margen Bruto",[Medida Margen Bruto],
+                                "Gastos de Administración",[Medida Gastos de Administración],
+                                "Gastos de Venta",[Medida Gasto de Venta],
+                                "EBITDA",[Medida EBITDA],
+                                "Depreciación",[Medida Depreciacion],
+                                "UAII (EBIT)",[Medida UAII (EBIT)],
+                                "Gastos de Interes",[Medida Gastos de Interes],
+                                "Otros Ingresos/Gastos Extraordinarios",[Medida Otros Ingresos/Gastos Extraordinarios], 
+                                "Utilidad Antes de impuestos",[Medida Utilidad antes de impuestos],
+                                "Margen Bruto",[Medida Margen Bruto],    
+                                "Impuesto sobre en la Renta",[Medida Impuesto a la renta],
+                                "Utilidad Neta",[Medida Utilidad neta],    
+                                0
+                                )
+                        )
