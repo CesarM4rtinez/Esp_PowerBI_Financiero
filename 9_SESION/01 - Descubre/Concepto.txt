@@ -1,0 +1,18 @@
+Ingresos
+Costo de lo vendido
+Margen Bruto
+Gastos de Administración
+Gastos de Venta
+Otros Ingresos Operativos
+Otros Gastos Operativos
+EBITDA
+Depreciación
+UAII (EBIT)
+Ingresos Financieros
+Gastos de Interes
+Diferencias de Cambio Neto
+Ganancia (Pérdida) Acumulada en Otro Resultado Integral por Activos Financieros
+Otros Ingresos/Gastos Extraordinarios
+Utilidad antes de Impuestos
+Impuesto sobre en la Renta
+Utilidad Neta
