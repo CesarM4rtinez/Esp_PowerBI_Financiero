@@ -1,0 +1,23 @@
+Texto Dinamico 1 = 
+VAR anio = [Año seleccionado]
+VAR texto01    = "Las ventas totales del año "
+VAR texto02    = " fueron "
+VAR ventatotal = FORMAT(CALCULATE([Ventas],Calendario[Año]=anio), " ""S/""###,###,###.##", "Es-Mx")
+VAR texto03    = " , de las cuales se pagaron solamente "
+VAR ventatotal_pagada = FORMAT(CALCULATE([Venta pagada],Calendario[Año]=anio), " ""S/""###,###,###.##", "Es-Mx")
+VAR texto04 = ". De lo pendiente por cobrar que es "
+VAR ventatotal_no_pagada = FORMAT(CALCULATE([Venta no pagada],Calendario[Año]=anio), " ""S/""###,###,###.##", "Es-Mx")
+VAR texto05 = ", el monto de " 
+VAR venta_porcobrar_enviado = FORMAT(CALCULATE([Por cobrar enviado],Calendario[Año]=anio), " ""S/""###,###,###.##", "Es-Mx")
+VAR texto06 = " esta listo para cobrarse y de los "
+VAR venta_porcobrar_no_enviado = FORMAT(CALCULATE([Por cobrar no enviado],Calendario[Año]=anio), " ""S/""###,###,###.##", "Es-Mx")
+VAR texto07 = " restantes esta pendiente enviar los productos.
+Revisar el detalle de los clientes a cobrar y a enviar.
+"
+RETURN texto01 & anio & 
+       texto02 & ventatotal & 
+       texto03&ventatotal_pagada&
+       texto04&ventatotal_no_pagada&
+       texto05&venta_porcobrar_enviado&
+       texto06&venta_porcobrar_no_enviado&
+       texto07
