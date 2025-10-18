@@ -1,0 +1,18 @@
+Medida Texto Deuda = 
+ var _Var_liquidez_corriente     = [Liquidez Corriente]
+ var _Var_liquidez_corriente_txt = FORMAT([Liquidez Corriente],"##.##%","Es-MX")
+ var _Var_Razon_deuda            = [Razon Deuda]
+ var _Var_Razon_deuda_txt        = FORMAT([Razon Deuda],"##.##%","Es-MX")
+ var _var_resultado = if(_Var_liquidez_corriente >1,
+                         if(
+                            _Var_Razon_deuda>1,
+                            "Si bien la liquidez corriente es "&_Var_liquidez_corriente_txt&", por lo que podemos pagar nuestra deuda en corto plazo, no podemos cubrir la deuda total. Como podemos ver en la razon de deuda -> "&_Var_Razon_deuda_txt,
+                            "Asi como podemos cubrir la deuda en corto plazo, como podemos ver en nuestra liquidez corriente "&_Var_liquidez_corriente_txt&", tambien podemos cubrir nuestra deuda total como se aprecia en nuestra razon de deuda -> "&_Var_Razon_deuda_txt
+                            ),
+                          if(
+                            _Var_Razon_deuda>1,
+                            "No puedo cubrir mi deuda en corto plazo, tampoco mi deuda total. Se recomienda inyectar capital y conversar con inversionistas. Esto se puede ver con nuestra medida de liquidez corriente -> "&_Var_liquidez_corriente_txt& " y nuetra razon de deuda -> "&_Var_Razon_deuda_txt,
+                            "No puedo cubrir mi deuda en corto plazo como muestra mi liquidez corriente ->"&_Var_liquidez_corriente_txt&", pero si mi deuda total. Se recomienda adicionar un capital de trabajo para mejorar la liquidez"
+                            )
+                         )
+RETURN _var_resultado
